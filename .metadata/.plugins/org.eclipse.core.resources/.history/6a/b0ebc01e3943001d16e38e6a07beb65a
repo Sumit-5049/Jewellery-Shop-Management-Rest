@@ -1,0 +1,40 @@
+package com.virtusa.jsm.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.virtusa.jsm.dao.BillDAO;
+import com.virtusa.jsm.dao.CustomerDAO;
+import com.virtusa.jsm.dao.QorderDAO;
+import com.virtusa.jsm.dao.ProductDAO;
+import com.virtusa.jsm.dao.ShopDAO;
+import com.virtusa.jsm.dto.Customer;
+import com.virtusa.jsm.dto.UserInfo;
+import com.virtusa.jsm.service.CustomerService;
+import com.virtusa.jsm.service.UserInfoService;
+
+@RestController
+@RequestMapping("/customer")
+public class CustomerController {
+	
+	@Autowired
+	CustomerService cservive;
+	@Autowired
+	UserInfoService uservice;
+	
+	@GetMapping("/all")
+	public List<?> getall(){
+		return cservive.findAll();
+	}
+	
+	@GetMapping("/register")
+	public Customer register(@ModelAttribute("m") UserInfo u) {
+		return uservice.register(u);
+	}
+	
+}

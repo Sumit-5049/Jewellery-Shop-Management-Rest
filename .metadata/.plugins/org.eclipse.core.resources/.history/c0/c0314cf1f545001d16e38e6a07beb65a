@@ -1,0 +1,28 @@
+package com.virtusa.jsm.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.virtusa.jsm.dao.BillDAO;
+import com.virtusa.jsm.dao.QorderDAO;
+import com.virtusa.jsm.dto.Bill;
+
+@Service
+public class BillService {
+	@Autowired
+	BillDAO dao;
+	
+	@Autowired
+	QorderDAO odao;
+
+	public List<?> findAll() {
+		return dao.findAll();		
+	}
+	
+	public List<?> findAllQ() {
+		return odao.findAll();		
+	}
+	
+}

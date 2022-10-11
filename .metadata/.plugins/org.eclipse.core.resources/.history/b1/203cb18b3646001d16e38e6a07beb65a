@@ -1,0 +1,34 @@
+package com.virtusa.jsm.service;
+
+
+import java.util.Iterator;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.virtusa.jsm.dao.CartRepository;
+import com.virtusa.jsm.dao.QorderRepository;
+import com.virtusa.jsm.dto.Cart;
+import com.virtusa.jsm.dto.QOrder;
+
+
+@Service
+public class OrderService {
+
+	@Autowired
+	QorderRepository odao;
+
+	public String purches(QOrder o) {
+		List c=o.getCarts();
+		for (Iterator iterator = c.iterator(); iterator.hasNext();) {
+			Object object = (Object) iterator.next();
+			
+		}
+		return null;
+	}
+	
+	
+	
+	
+}

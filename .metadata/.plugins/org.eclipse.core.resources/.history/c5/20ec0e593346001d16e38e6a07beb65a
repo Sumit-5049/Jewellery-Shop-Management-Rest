@@ -1,0 +1,64 @@
+package com.virtusa.jsm.dto;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Cart")
+public class Cart {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	int cartid;
+	@OneToOne
+	Product p;
+	int purchesquantity;	
+	double price; 	//priceperone*quantity
+	
+	public Cart(int cartid, Product p, int purchesquantity, double price) {
+		super();
+		this.cartid = cartid;
+		this.p = p;
+		this.purchesquantity = purchesquantity;
+		this.price = price;
+	}
+	public Cart() {
+		super();
+	}
+	public int getcartid() {
+		return cartid;
+	}
+	public void setcartid(int cartid) {
+		this.cartid = cartid;
+	}
+	public Product getP() {
+		return p;
+	}
+	public void setP(Product p) {
+		this.p = p;
+	}
+	public int getPurchesquantity() {
+		return purchesquantity;
+	}
+	public void setPurchesquantity(int purchesquantity) {
+		this.purchesquantity = purchesquantity;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	@Override
+	public String toString() {
+		return "Order [cartid=" + cartid + ", p=" + p + ", purchesquantity=" + purchesquantity + ", price=" + price
+				+ "]";
+	}
+	
+	
+}

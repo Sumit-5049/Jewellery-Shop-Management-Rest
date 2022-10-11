@@ -1,0 +1,140 @@
+package com.virtusa.jsm.dto;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name = "cust_table")
+public class Customer {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	int id;
+	String name;
+	String email;
+	String contact;
+	int buildno;
+	String streetName;
+	String city;
+	String pin;
+	String password;
+	
+	@OneToMany
+	List<Order> orders=new ArrayList<>();
+	
+	public Customer() {
+		super();
+	}
+
+	public Customer(int id, String name, String email, String contact, int buildno, String streetName, String city,
+			String pin, String password, List<Order> orders) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.contact = contact;
+		this.buildno = buildno;
+		this.streetName = streetName;
+		this.city = city;
+		this.pin = pin;
+		this.password = password;
+		this.orders = orders;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getContact() {
+		return contact;
+	}
+
+	public void setContact(String contact) {
+		this.contact = contact;
+	}
+
+	public int getBuildno() {
+		return buildno;
+	}
+
+	public void setBuildno(int buildno) {
+		this.buildno = buildno;
+	}
+
+	public String getStreetName() {
+		return streetName;
+	}
+
+	public void setStreetName(String streetName) {
+		this.streetName = streetName;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getPin() {
+		return pin;
+	}
+
+	public void setPin(String pin) {
+		this.pin = pin;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public List<Order> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Customer [id=" + id + ", name=" + name + ", email=" + email + ", contact=" + contact + ", buildno="
+				+ buildno + ", streetName=" + streetName + ", city=" + city + ", pin=" + pin + ", password=" + password
+				+ ", orders=" + orders + "]";
+	}
+	
+	
+}

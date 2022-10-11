@@ -1,0 +1,90 @@
+package com.virtusa.jsm.service;
+
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Service;
+
+import com.virtusa.jsm.dao.ProductRepository;
+import com.virtusa.jsm.dto.Product;
+import com.virtusa.jsm.exception.DataNotFoundException;
+
+@Service
+public class ProductService {
+
+	@Autowired
+	ProductRepository dao;
+	@Autowired
+	Environment env;
+
+	public List<Product> getAll() throws DataNotFoundException {
+		List<Product> list=null;
+		list= dao.findAll();
+		if(!list.isEmpty())
+		{
+			for (Iterator iterator = list.iterator(); iterator.hasNext();) {
+				Product p = (Product) iterator.next();
+//				if(p.getPrice()==0.0)
+				{
+					double r=0.0;
+					 double x=p.getPurity();
+					 String m=p.getMaterial();
+					 if(m.equals("Gold"))
+						 r=Double.parseDouble(env.getProperty("Gold"));
+					 else if(m.equals("Silver"))
+						 r=Double.parseDouble(env.getProperty("Silver"));
+					 p.setPrice(r*x*p.getWeight()/100);
+					 p.setRateper10gm(r);
+					 dao.save(p);
+				}
+			}
+			
+			return list;
+		}
+		else
+			throw new DataNotFoundException(env.getProperty("emptyproduct"));
+	}
+
+	public List<Product> getAllByMaterial(String material) throws DataNotFoundException {
+		List<Product> list=null;
+		list= dao.findAllByMaterial(material);
+		if(!list.isEmpty())
+			return list;
+		else
+			throw new DataNotFoundException(env.getProperty("emptyproductmat")+material);
+	}
+
+	public List<Product> getAllByType(String type) throws DataNotFoundException {
+		List<Product> list=null;
+		list= dao.findAllByType(type);
+		if(!list.isEmpty())
+			return list;
+		else
+			throw new DataNotFoundException(env.getProperty("emptyproductmat")+type);
+	}
+		
+	public String add(Product p) {
+		dao.save(p);
+		return env.getProperty("padded");
+	}
+
+	public String updateProduct(Product p) {
+		dao.save(p);
+		return env.getProperty("pupdated");
+	}
+
+	public Product getById(int pid) throws DataNotFoundException {
+		Product p=null;
+		p=dao.findById(pid).get();
+		if(p!=null)
+			return p;
+		else
+			throw new DataNotFoundException(env.getProperty("emptyproduct"));
+		 
+	}
+	
+	
+}

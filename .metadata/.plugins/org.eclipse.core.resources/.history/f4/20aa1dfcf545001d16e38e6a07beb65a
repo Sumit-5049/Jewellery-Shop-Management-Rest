@@ -1,0 +1,33 @@
+package com.virtusa.jsm.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.virtusa.jsm.dao.ShopRepositry;
+import com.virtusa.jsm.dto.Customer;
+import com.virtusa.jsm.dto.Shop;
+
+@Service
+public class ShopService {
+	
+	@Autowired
+	ShopRepositry dao;
+	
+	public List<?> findAll() {
+		return dao.findAll();		
+	}
+
+	public Shop add(Shop s) {
+		return dao.save(s);
+	}
+
+	public Shop login(String email, String pass) {
+		Shop s=dao.findByEmail(email);
+		if(s.getPassword().equals(pass))
+			return s;
+		else
+			return null;
+	}
+}

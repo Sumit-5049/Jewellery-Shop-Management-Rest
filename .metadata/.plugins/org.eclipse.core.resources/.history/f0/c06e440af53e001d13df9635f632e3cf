@@ -1,0 +1,10 @@
+package com.virtusa.jsm.dto;
+
+import java.time.LocalDateTime;
+
+public class ErrorInfo {
+	
+	LocalDateTime timestamp;
+    String msg;
+    String url​​​​​​​
+}

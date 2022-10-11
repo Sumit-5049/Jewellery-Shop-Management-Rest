@@ -1,0 +1,31 @@
+package com.virtusa.jsm.exception;
+
+import java.time.LocalDateTime;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.client.HttpStatusCodeException;
+
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+	
+	  @ExceptionHandler(DataNotFoundException.class)
+	    public @ResponseBody  ErrorInfo DataNotFoundException(DataNotFoundException e, HttpServletRequest req,HttpStatus.FOUND) {
+	          return new ErrorInfo(LocalDateTime.now(), e.getMessage(), req.getRequestURI());
+	    }
+	  
+	  @ExceptionHandler(InvalidCredentialException.class)
+	    public @ResponseBody  ErrorInfo InvalidCredentialException(InvalidCredentialException e, HttpServletRequest req) {
+	          return new ErrorInfo(LocalDateTime.now(), e.getMessage(), req.getRequestURI());
+	    }
+	  
+//	  @ExceptionHandler(DataNotFoundException.class)
+//	    public @ResponseBody  ErrorInfo ProductErrorException(DataNotFoundException e, HttpServletRequest req) {
+//	          return new ErrorInfo(LocalDateTime.now(), e.getMessage(), req.getRequestURI());
+//	    }
+	  
+}

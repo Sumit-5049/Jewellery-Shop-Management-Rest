@@ -1,0 +1,47 @@
+package com.virtusa.jsm.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.virtusa.jsm.dao.BillDAO;
+import com.virtusa.jsm.dao.CustomerDAO;
+import com.virtusa.jsm.dao.OrderDAO;
+import com.virtusa.jsm.dao.ProductDAO;
+import com.virtusa.jsm.dto.Bill;
+import com.virtusa.jsm.dto.Customer;
+
+@RestController
+public class Sample {
+
+	@Autowired
+	BillDAO bdao;
+	@Autowired
+	CustomerDAO cdao;
+	@Autowired
+	OrderDAO odao;
+	@Autowired
+	ProductDAO pdao;
+	
+	@GetMapping("/all")
+	public List<?> getall(){
+		return pdao.findAll();
+	}
+	
+	@PostMapping("/addcu")
+	public Customer addcu(@RequestBody Customer c){
+		cdao.save(c);
+		return c;
+	}
+	
+	@PostMapping("/addbill")
+	public Bill addbill(@RequestBody Bill b){
+		bdao.save(b);
+		return b;
+	}
+	
+}

@@ -1,0 +1,18 @@
+package com.virtusa.jsm.dao;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.virtusa.jsm.dto.Customer;
+import com.virtusa.jsm.exception.DataNotFoundException;
+
+@Repository
+public interface CustomerDAO extends JpaRepository<Customer, Integer>{
+	
+	
+	@Query("Select c from Customer c where c.email=:p")
+	public Customer getCustomer(@Param("p") String email) throws DataNotFoundException;
+
+}

@@ -1,0 +1,64 @@
+package com.virtusa.jsm.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Service;
+
+import com.virtusa.jsm.dao.BillRepository;
+import com.virtusa.jsm.dao.QorderRepository;
+import com.virtusa.jsm.dto.Bill;
+import com.virtusa.jsm.dto.Customer;
+import com.virtusa.jsm.dto.Product;
+import com.virtusa.jsm.dto.QOrder;
+import com.virtusa.jsm.exception.DataNotFoundException;
+
+import java.sql.Date;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+
+@Service
+public class BillService {
+	@Autowired
+	BillRepository dao;
+	
+	@Autowired
+	QorderRepository odao;
+	@Autowired
+	CustomerService cservice;
+	@Autowired
+	Environment env;
+	
+	public List<?> findAll() {
+		return dao.findAll();		
+	}
+	
+	public List<?> findAllQ() {
+		return odao.findAll();		
+	}
+
+	public void generate(QOrder o, int i) {
+		Customer c=cservice.getById(i);
+		LocalDateTime now = LocalDateTime.now();
+        Timestamp dateTime = Timestamp.valueOf(now);
+        Bill b=new Bill();
+        b.setCust(c);
+        b.setDateTime(dateTime);
+        b.setord(o);
+        dao.save(b);
+        
+	}
+
+	public Object getAll() throws DataNotFoundException {
+		List<Bill> list=null;
+		list= dao.findAll();
+		if(!list.isEmpty())
+			return list;
+		else
+			throw new DataNotFoundException(env.getProperty("billnot"));
+	}
+	
+}

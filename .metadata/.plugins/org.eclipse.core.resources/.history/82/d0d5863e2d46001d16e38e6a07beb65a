@@ -1,0 +1,78 @@
+package com.virtusa.jsm.service;
+
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Service;
+
+import com.virtusa.jsm.dao.ProductRepository;
+import com.virtusa.jsm.dto.Product;
+import com.virtusa.jsm.exception.DataNotFoundException;
+
+@Service
+public class ProductService {
+
+	@Autowired
+	ProductRepository dao;
+	@Autowired
+	Environment env;
+
+	public List<Product> getAll() throws DataNotFoundException {
+		List<Product> list=null;
+		list= dao.findAll();
+		if(!list.isEmpty())
+		{
+			 Iterator<Product> i= list.listIterator();
+			 while(i.hasNext()) {
+				 if(i.next().getPrice()==0.0)
+				 {
+					 double r=0.0;
+					 double p=i.next().getPurity();
+					 String m=i.next().getMaterial();
+					 System.out.println(m);
+					 if(m.equals("Gold"))
+						 r=50000;
+					 else if(m.equals("Silver"))
+						 r=550;
+					 i.next().setPrice(r*p*i.next().getWeight()/100);
+				 }
+			 }
+			return list;
+		}
+		else
+			throw new DataNotFoundException(env.getProperty("emptyproduct"));
+	}
+
+	public List<Product> getAllByMaterial(String material) throws DataNotFoundException {
+		List<Product> list=null;
+		list= dao.findAllByMaterial(material);
+		if(!list.isEmpty())
+			return list;
+		else
+			throw new DataNotFoundException(env.getProperty("emptyproductmat")+material);
+	}
+
+	public List<Product> getAllByType(String type) throws DataNotFoundException {
+		List<Product> list=null;
+		list= dao.findAllByType(type);
+		if(!list.isEmpty())
+			return list;
+		else
+			throw new DataNotFoundException(env.getProperty("emptyproductmat")+type);
+	}
+		
+	public Object add(Product p) {
+		dao.save(p);
+		return env.getProperty("padded");
+	}
+
+	public Object updateProduct(Product p) {
+		dao.save(p);
+		return env.getProperty("pupdated");
+	}
+	
+	
+}

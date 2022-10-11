@@ -1,0 +1,138 @@
+package com.virtusa.jsm.dto;
+
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Entity
+@Table(name = "bill")
+public class Bill {
+
+	@Id
+	int billid;
+	Timestamp dateTime;
+	
+	
+	
+//	@OneToMany
+//	List<QOrder> oredrs=new ArrayList<>();
+//	
+//	@Column(name="nettax")
+//	Double tax;
+//	@Column(name="net")
+//	Double total;
+	@OneToOne(mappedBy = "orderid")
+	Order o;
+	@OneToOne(mappedBy = "customerid")
+	Customer c;
+	@OneToOne(mappedBy = "shopid")
+	Shop s;
+	public Bill() {
+		super();
+	}
+	
+	
+	
+	
+
+
+	public Bill(int billid, Timestamp dateTime, Order o, Customer c, Shop s) {
+		super();
+		this.billid = billid;
+		this.dateTime = dateTime;
+		this.o = o;
+		this.c = c;
+		this.s = s;
+	}
+
+
+
+
+
+
+	public int getBillid() {
+		return billid;
+	}
+	public void setBillid(int billid) {
+		this.billid = billid;
+	}
+	public Timestamp getDateTime() {
+		return dateTime;
+	}
+	public void setDateTime(Timestamp dateTime) {
+		this.dateTime = dateTime;
+	}
+//	public List<QOrder> getOredrs() {
+//		return oredrs;
+//	}
+//	public void setOredrs(List<QOrder> oredrs) {
+//		this.oredrs = oredrs;
+//	}
+//	public Double getTax() {
+//		return tax;
+//	}
+//	public void setTax(Double tax) {
+//		this.tax = tax;
+//	}
+//	public Double getTotal() {
+//		return total;
+//	}
+//	public void setTotal(Double total) {
+//		this.total = total;
+//	}
+	
+//	public Bill(int billid, Timestamp dateTime, List<QOrder> oredrs, Double tax, Double total, int cust_id,
+//			int shop_id) {
+//		super();
+//		this.billid = billid;
+//		this.dateTime = dateTime;
+//		this.oredrs = oredrs;
+//		this.tax = tax;
+//		this.total = total;
+//		this.cust_id = cust_id;
+//		this.shop_id = shop_id;
+//	}
+//	@Override
+//	public String toString() {
+//		return "Bill [billid=" + billid + ", dateTime=" + dateTime + ", oredrs=" + oredrs + ", tax=" + tax + ", total="
+//				+ total + ", cust_id=" + cust_id + ", shop_id=" + shop_id + "]";
+//	}
+	public Order getO() {
+		return o;
+	}
+	public Customer getC() {
+		return c;
+	}
+	public Shop getS() {
+		return s;
+	}
+	public void setC(Customer c) {
+		this.c = c;
+	}
+
+	
+	public void setS(Shop s) {
+		this.s = s;
+	}
+	public void setO(Order o) {
+		this.o = o;
+	}
+	@Override
+	public String toString() {
+		return "Bill [billid=" + billid + ", dateTime=" + dateTime + ", o=" + o + ", c=" + c + ", s=" + s + "]";
+	}
+	
+	
+	
+}

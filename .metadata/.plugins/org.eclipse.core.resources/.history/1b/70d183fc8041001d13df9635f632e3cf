@@ -1,0 +1,24 @@
+package com.virtusa.jsm.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.virtusa.jsm.dao.BillDAO;
+import com.virtusa.jsm.dao.OrderDAO;
+import com.virtusa.jsm.dto.Bill;
+
+@Service
+public class BillService {
+	@Autowired
+	BillDAO dao;
+	
+	@Autowired
+	OrderDAO odao;
+
+	public void save(Bill b) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+}

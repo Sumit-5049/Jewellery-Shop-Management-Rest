@@ -1,0 +1,61 @@
+package com.virtusa.jsm.dto;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "qorder")
+public class Cart {
+	
+	@Id
+	int qoredrid;
+	@OneToOne
+	Product p;
+	
+	int purchesquantity;	
+	double price; 	//priceperone*quantity
+	
+	public Cart(int qoredrid, Product p, int purchesquantity, double price) {
+		super();
+		this.qoredrid = qoredrid;
+		this.p = p;
+		this.purchesquantity = purchesquantity;
+		this.price = price;
+	}
+	public Cart() {
+		super();
+	}
+	public int getqoredrid() {
+		return qoredrid;
+	}
+	public void setqoredrid(int qoredrid) {
+		this.qoredrid = qoredrid;
+	}
+	public Product getP() {
+		return p;
+	}
+	public void setP(Product p) {
+		this.p = p;
+	}
+	public int getPurchesquantity() {
+		return purchesquantity;
+	}
+	public void setPurchesquantity(int purchesquantity) {
+		this.purchesquantity = purchesquantity;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	@Override
+	public String toString() {
+		return "Order [qoredrid=" + qoredrid + ", p=" + p + ", purchesquantity=" + purchesquantity + ", price=" + price
+				+ "]";
+	}
+	
+	
+}

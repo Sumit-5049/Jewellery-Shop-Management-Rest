@@ -1,0 +1,15 @@
+package com.virtusa.jsm.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.virtusa.jsm.dao.AddressDAO;
+import com.virtusa.jsm.dao.CustomerDAO;
+
+@Service
+public class CustomerService {
+	
+	@Autowired
+	CustomerDAO dao;
+	
+}

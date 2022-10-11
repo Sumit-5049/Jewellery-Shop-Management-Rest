@@ -1,0 +1,5 @@
+package com.virtusa.jsm.exception;
+
+public class GlobalExceptionHandler {
+
+}

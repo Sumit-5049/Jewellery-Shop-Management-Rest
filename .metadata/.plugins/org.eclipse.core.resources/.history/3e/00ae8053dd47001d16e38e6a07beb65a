@@ -1,0 +1,29 @@
+package com.authorizationservice.authorization.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+
+@Service
+public class AppUserDetailsService  {
+	
+    
+    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
+    	
+    	// in real scenario u need to autheticate the user
+    	// either from db or spring security
+    	
+    	
+    	UserDetails user = new User("sam","sam", new ArrayList<>());
+		return user;
+    }
+
+
+    
+} 
+  

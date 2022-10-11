@@ -1,0 +1,54 @@
+package com.virtusa.jsm.controller;
+
+import java.util.List;
+
+import javax.websocket.server.PathParam;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.virtusa.jsm.dao.BillRepository;
+import com.virtusa.jsm.dao.CustomerRepository;
+import com.virtusa.jsm.dao.QorderRepository;
+import com.virtusa.jsm.dao.ProductRepository;
+import com.virtusa.jsm.dao.ShopRepository;
+import com.virtusa.jsm.dto.Customer;
+import com.virtusa.jsm.dto.UserInfo;
+import com.virtusa.jsm.exception.DataNotFoundException;
+import com.virtusa.jsm.exception.InvalidCredentialException;
+import com.virtusa.jsm.service.CustomerService;
+import com.virtusa.jsm.service.UserInfoService;
+
+@RestController
+@RequestMapping("/customer")
+public class CustomerController {
+	
+	@Autowired
+	CustomerService cservice;
+	@Autowired
+	UserInfoService uservice;
+	
+	@GetMapping("/all")
+	public List<?> getall(){
+		return uservice.findAll();
+	}
+	
+	@GetMapping("/login/{p1}/{p2}")
+	public  ResponseEntity<?> loginCus(@PathVariable("p1") String email,@PathVariable("p2") String pass) throws InvalidCredentialException, DataNotFoundException {
+		return new ResponseEntity<>(cservice.login(email, pass),HttpStatus.OK);
+	}
+	
+	@PostMapping("/register")
+	public String register(@RequestBody UserInfo u) {
+		return uservice.register(u);
+	}
+	
+}

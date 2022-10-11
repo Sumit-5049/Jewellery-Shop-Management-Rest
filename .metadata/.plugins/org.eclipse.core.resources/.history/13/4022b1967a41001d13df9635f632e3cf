@@ -1,0 +1,57 @@
+package com.virtusa.jsm.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+
+import com.virtusa.jsm.dto.Bill;
+import com.virtusa.jsm.dto.Customer;
+import com.virtusa.jsm.service.BillService;
+import com.virtusa.jsm.service.CustomerService;
+import com.virtusa.jsm.service.ProductService;
+import com.virtusa.jsm.service.ShopService;
+
+@RestController
+public class Sample {
+
+	@Autowired
+	BillService bservice;
+	@Autowired
+	CustomerService cservice;
+//	@Autowired
+//	OrderService oservice;
+	@Autowired
+	ProductService pservice;
+	@Autowired
+	ShopService sservice;
+	
+//	@GetMapping("/all")
+//	public List<?> getall(){
+//		return sservice.findAll();
+//	}
+//	
+//	@PostMapping("/addcu")
+//	public Customer addcu(@RequestBody Customer c){
+//		cservice.save(c);
+//		return c;
+//	}
+//	
+//	@PostMapping("/addbill")
+//	public Bill addbill(@RequestBody Bill b){
+//		bservice.save(b);
+//		return b;
+//	}
+	
+	@GetMapping("/login")
+	public Customer login() {
+		
+		return cservice.login("5@jsm.com","0");
+	}
+	
+	
+}

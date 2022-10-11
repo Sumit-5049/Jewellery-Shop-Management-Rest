@@ -1,0 +1,28 @@
+package com.virtusa.jsm.dto;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
+
+@Entity
+@Table(name = "shop_table")
+public class Shop {
+	
+	@Id
+	int id;
+	String userName;
+	String email;
+	String contact;
+	int buildno;
+	String streetName;
+	String city;
+	String pin;
+	String password;
+	
+	@OneToMany
+	List<Product> products=new ArrayList<>();
+}

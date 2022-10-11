@@ -1,0 +1,53 @@
+package com.virtusa.jsm.controller;
+
+import java.util.List;
+
+import javax.websocket.server.PathParam;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.virtusa.jsm.dao.BillDAO;
+import com.virtusa.jsm.dao.CustomerDAO;
+import com.virtusa.jsm.dao.QorderDAO;
+import com.virtusa.jsm.dao.ProductDAO;
+import com.virtusa.jsm.dao.ShopDAO;
+import com.virtusa.jsm.dto.Customer;
+import com.virtusa.jsm.dto.UserInfo;
+import com.virtusa.jsm.service.CustomerService;
+import com.virtusa.jsm.service.UserInfoService;
+
+@RestController
+@RequestMapping("/customer")
+public class CustomerController {
+	
+	@Autowired
+	CustomerService cservice;
+	@Autowired
+	UserInfoService uservice;
+	
+	@GetMapping("/all")
+	public List<?> getall(){
+		return uservice.findAll();
+	}
+	
+	@GetMapping("/login/{p1}/{p2}")
+	public Customer loginCus(@PathVariable("p1") String email,@PathVariable("p2") String pass) {
+		System.out.println(email);
+		return cservice.login(email, pass);
+	}
+	
+	
+	@PostMapping("/register")
+	public Customer register(@RequestBody UserInfo u) {
+//		Customer c=cservive.register(u.getC());
+		return uservice.register(u);
+	}
+	
+}

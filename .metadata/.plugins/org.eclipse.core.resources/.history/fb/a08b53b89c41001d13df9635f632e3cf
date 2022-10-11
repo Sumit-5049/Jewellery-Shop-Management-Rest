@@ -1,0 +1,65 @@
+package com.virtusa.jsm.dto;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="order")
+public class Order {
+
+		@Id
+		int orderid;
+	@OneToMany
+	List<Cart> cartrs=new ArrayList<>();
+	
+//	@Column(name="nettax")
+	Double tax;
+//	@Column(name="net")
+	Double total;
+	public Order(int orderid, List<Cart> cartrs, Double tax, Double total) {
+		super();
+		this.orderid = orderid;
+		this.cartrs = cartrs;
+		this.tax = tax;
+		this.total = total;
+	}
+	public Order() {
+		super();
+	}
+	public int getOrderid() {
+		return orderid;
+	}
+	public void setOrderid(int orderid) {
+		this.orderid = orderid;
+	}
+	public List<Cart> getcartrs() {
+		return cartrs;
+	}
+	public void setcartrs(List<Cart> cartrs) {
+		this.cartrs = cartrs;
+	}
+	public Double getTax() {
+		return tax;
+	}
+	public void setTax(Double tax) {
+		this.tax = tax;
+	}
+	public Double getTotal() {
+		return total;
+	}
+	public void setTotal(Double total) {
+		this.total = total;
+	}
+	@Override
+	public String toString() {
+		return "Order [orderid=" + orderid + ", cartrs=" + cartrs + ", tax=" + tax + ", total=" + total + "]";
+	}
+	
+	
+}

@@ -1,0 +1,42 @@
+package com.virtusa.jsm.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.virtusa.jsm.dao.CustomerDAO;
+import com.virtusa.jsm.dto.Customer;
+
+@Service
+public class CustomerService {
+	
+	@Autowired
+	CustomerDAO dao;
+	@Autowired
+	UserInfoService uservice;
+
+	public Customer login(String email, String pass) {
+		Customer c=dao.findByEmail(email);
+		if(uservice.login(c,pass))
+			return c;
+		else
+			return null;
+	}
+
+	public void save(Customer c) {
+		dao.save(c);
+		
+	}
+
+	public List<?> findAll() {
+		return dao.findAll();		
+	}
+
+	public Customer register(Customer c) {
+		
+		return dao.save(c);
+	}
+	
+	
+}

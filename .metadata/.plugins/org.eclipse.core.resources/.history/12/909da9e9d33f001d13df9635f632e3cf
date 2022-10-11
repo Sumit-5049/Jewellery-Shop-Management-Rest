@@ -1,0 +1,135 @@
+package com.virtusa.jsm.dto;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "product_table")
+public class Product {
+
+	@Id
+	int id;
+	String pname;
+	String description;
+	double weight;
+	double purity;
+	String material;
+	String type;
+	int quantity;	
+	
+//	@Column(name = "costper10gm")
+	double rateper10gm;
+//	@Column(name = "subtotal")
+	double price;
+	
+	public Product() {
+		super();
+	}
+
+	public Product(int id, String pname, String description, double weight, double purity, String material, String type,
+			int quantity, double priceper10gm, double price) {
+		super();
+		this.id = id;
+		this.pname = pname;
+		this.description = description;
+		this.weight = weight;
+		this.purity = purity;
+		this.material = material;
+		this.type = type;
+		this.quantity = quantity;
+		this.rateper10gm = priceper10gm;
+		this.price = price;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getPname() {
+		return pname;
+	}
+
+	public void setPname(String pname) {
+		this.pname = pname;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public double getWeight() {
+		return weight;
+	}
+
+	public void setWeight(double weight) {
+		this.weight = weight;
+	}
+
+	public double getPurity() {
+		return purity;
+	}
+
+	public void setPurity(double purity) {
+		this.purity = purity;
+	}
+
+	public String getMaterial() {
+		return material;
+	}
+
+	public void setMaterial(String material) {
+		this.material = material;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	public double getPriceper10gm() {
+		return priceper10gm;
+	}
+
+	public void setPriceper10gm(double priceper10gm) {
+		this.priceper10gm = priceper10gm;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", pname=" + pname + ", description=" + description + ", weight=" + weight
+				+ ", purity=" + purity + ", material=" + material + ", type=" + type + ", quantity=" + quantity
+				+ ", priceper10gm=" + priceper10gm + ", price=" + price + "]";
+	}
+
+	
+	
+}

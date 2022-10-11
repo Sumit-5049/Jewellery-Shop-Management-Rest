@@ -1,0 +1,27 @@
+server.port=8081
+#spring.mvc.view.prefix=/WEB-INF/
+#spring.mvc.view.suffix=.jsp
+spring.datasource.url=jdbc:mysql://localhost:3306/virtusajsm
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.username=root
+spring.datasource.password=system
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5InnoDBDialect
+
+logincus=Customer Loggedin Successfully!!! With Email: 
+loginshop=Shop Loggedin Successfully!!! 
+notpresent=Customer Not Registered!!! With Email: 
+invalid=Wrong Credentials Entered!!!
+
+registered=Customer Registered Successfully!!! With Email:
+
+emptyproduct=Sorry!!! Products Not Avaliable!!!
+emptyproductmat=Sorry!!! Products Not Avaliable For 
+padded=Product Added Successfully!!!
+pupdated=Product Updated Successfully!!!
+
+lessStock=Available Stock Is
+purched=Order Purched Successfully
+
+tax=5.0

@@ -1,0 +1,152 @@
+package com.virtusa.jsm.dto;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name = "shop")
+public class Shop {
+	
+	@Id
+	int id;
+	String userName;
+	String email;
+	String contact;
+	int buildno;
+	String streetName;
+	String city;
+	String pin;
+	String password;
+	
+	@OneToMany
+	List<Product> products=new ArrayList<>();
+	
+	@OneToMany(mappedBy = "cust_id")
+	List<Bill> bills=new ArrayList<>();
+
+	public Shop(int id, String userName, String email, String contact, int buildno, String streetName, String city,
+			String pin, String password, List<Product> products, List<Bill> bills) {
+		super();
+		this.id = id;
+		this.userName = userName;
+		this.email = email;
+		this.contact = contact;
+		this.buildno = buildno;
+		this.streetName = streetName;
+		this.city = city;
+		this.pin = pin;
+		this.password = password;
+		this.products = products;
+		this.bills = bills;
+	}
+
+	public Shop() {
+		super();
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getContact() {
+		return contact;
+	}
+
+	public void setContact(String contact) {
+		this.contact = contact;
+	}
+
+	public int getBuildno() {
+		return buildno;
+	}
+
+	public void setBuildno(int buildno) {
+		this.buildno = buildno;
+	}
+
+	public String getStreetName() {
+		return streetName;
+	}
+
+	public void setStreetName(String streetName) {
+		this.streetName = streetName;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getPin() {
+		return pin;
+	}
+
+	public void setPin(String pin) {
+		this.pin = pin;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public List<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<Product> products) {
+		this.products = products;
+	}
+
+	public List<Bill> getBills() {
+		return bills;
+	}
+
+	public void setBills(List<Bill> bills) {
+		this.bills = bills;
+	}
+
+	@Override
+	public String toString() {
+		return "Shop [id=" + id + ", userName=" + userName + ", email=" + email + ", contact=" + contact + ", buildno="
+				+ buildno + ", streetName=" + streetName + ", city=" + city + ", pin=" + pin + ", password=" + password
+				+ ", products=" + products + ", bills=" + bills + "]";
+	}
+	
+	
+	
+	
+}

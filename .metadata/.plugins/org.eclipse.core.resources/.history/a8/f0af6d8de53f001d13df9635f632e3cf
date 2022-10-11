@@ -1,0 +1,10 @@
+package com.virtusa.jsm.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.virtusa.jsm.dto.Bill;
+import com.virtusa.jsm.dto.QOrder;
+
+public interface OrderDAO extends JpaRepository<QOrder, Integer>{
+
+}

@@ -1,0 +1,26 @@
+package com.virtusa.jsm.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.virtusa.jsm.dao.CustomerDAO;
+import com.virtusa.jsm.dto.Customer;
+
+@Service
+public class CustomerService {
+	
+	@Autowired
+	CustomerDAO dao;
+
+	public Customer login(String email, String pass) {
+		// TODO Auto-generated method stub
+		System.out.println("hii");
+		Customer c=dao.getCustomer(email);
+		if(c.getPassword().equals(pass))
+			return c;
+		else
+			return null;
+	}
+	
+	
+}

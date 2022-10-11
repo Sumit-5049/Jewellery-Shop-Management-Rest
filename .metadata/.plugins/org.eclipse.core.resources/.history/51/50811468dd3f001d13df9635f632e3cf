@@ -1,0 +1,36 @@
+package com.virtusa.jsm.dto;
+
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "bill_table")
+public class Bill {
+
+	@Id
+	int billid;
+	Timestamp dateTime;
+	
+	@ManyToOne()
+	Customer cus;
+	
+	@OneToMany
+	List<Order> oredrs=new ArrayList<>();
+	
+
+	
+	@Column(name="nettax")
+	Double tax;
+	@Column(name="net")
+	Double total;
+	
+}

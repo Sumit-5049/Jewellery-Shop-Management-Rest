@@ -1,0 +1,119 @@
+package com.virtusa.jsm.dto;
+
+import java.sql.Timestamp;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "bill")
+public class Bill {
+
+	@Id
+	int billid;
+	Timestamp dateTime;
+	
+	
+	
+//	@OneToMany
+//	List<QOrder> oredrs=new ArrayList<>();
+//	
+//	@Column(name="nettax")
+//	Double tax;
+//	@Column(name="net")
+//	Double total;
+	
+	int ord_id;
+	int cust_id;
+	int shop_id;
+	
+	public Bill() {
+		super();
+	}
+	
+	
+	
+	public Bill(int billid, Timestamp dateTime, int o, int cust_id, int shop_id) {
+		super();
+		this.billid = billid;
+		this.dateTime = dateTime;
+		this.ord_id = o;
+		this.cust_id = cust_id;
+		this.shop_id = shop_id;
+	}
+
+
+
+	public int getBillid() {
+		return billid;
+	}
+	public void setBillid(int billid) {
+		this.billid = billid;
+	}
+	public Timestamp getDateTime() {
+		return dateTime;
+	}
+	public void setDateTime(Timestamp dateTime) {
+		this.dateTime = dateTime;
+	}
+//	public List<QOrder> getOredrs() {
+//		return oredrs;
+//	}
+//	public void setOredrs(List<QOrder> oredrs) {
+//		this.oredrs = oredrs;
+//	}
+//	public Double getTax() {
+//		return tax;
+//	}
+//	public void setTax(Double tax) {
+//		this.tax = tax;
+//	}
+//	public Double getTotal() {
+//		return total;
+//	}
+//	public void setTotal(Double total) {
+//		this.total = total;
+//	}
+	public int getCust_id() {
+		return cust_id;
+	}
+	public void setCust_id(int cust_id) {
+		this.cust_id = cust_id;
+	}
+	public int getShop_id() {
+		return shop_id;
+	}
+	public void setShop_id(int shop_id) {
+		this.shop_id = shop_id;
+	}
+//	public Bill(int billid, Timestamp dateTime, List<QOrder> oredrs, Double tax, Double total, int cust_id,
+//			int shop_id) {
+//		super();
+//		this.billid = billid;
+//		this.dateTime = dateTime;
+//		this.oredrs = oredrs;
+//		this.tax = tax;
+//		this.total = total;
+//		this.cust_id = cust_id;
+//		this.shop_id = shop_id;
+//	}
+//	@Override
+//	public String toString() {
+//		return "Bill [billid=" + billid + ", dateTime=" + dateTime + ", oredrs=" + oredrs + ", tax=" + tax + ", total="
+//				+ total + ", cust_id=" + cust_id + ", shop_id=" + shop_id + "]";
+//	}
+	public int getOrd_id() {
+		return ord_id;
+	}
+	public void setord_id(int o) {
+		this.ord_id = o;
+	}
+	@Override
+	public String toString() {
+		return "Bill [billid=" + billid + ", dateTime=" + dateTime + ", ord_id=" + ord_id + ", cust_id=" + cust_id + ", shop_id="
+				+ shop_id + "]";
+	}
+	
+	
+	
+}

@@ -1,0 +1,153 @@
+10-Oct-2022 13:37:36 INFO - Customer Loggedin Successfully!!! With Email: cust302@jsm.com
+10-Oct-2022 13:39:44 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 20432 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 13:39:44 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 13:39:44 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 13:39:45 INFO - Started JsmApplication in 0.901 seconds (JVM running for 559.517)
+10-Oct-2022 13:39:46 ERROR - Sorry!!! Products Not Avaliable!!!
+10-Oct-2022 13:40:27 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 20432 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 13:40:27 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 13:40:27 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 13:40:27 INFO - Started JsmApplication in 0.556 seconds (JVM running for 601.935)
+10-Oct-2022 13:40:46 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 20432 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 13:40:46 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 13:40:46 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 13:40:47 INFO - Started JsmApplication in 0.683 seconds (JVM running for 621.325)
+10-Oct-2022 13:40:48 ERROR - Sorry!!! Products Not Avaliable!!!300
+10-Oct-2022 13:41:16 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 20432 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 13:41:16 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 13:41:16 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 13:41:16 INFO - Started JsmApplication in 0.608 seconds (JVM running for 650.662)
+10-Oct-2022 13:41:17 ERROR - Sorry!!! Products Not Avaliable!!!product id 300
+10-Oct-2022 13:41:26 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 20432 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 13:41:26 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 13:41:26 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 13:41:26 INFO - Started JsmApplication in 0.538 seconds (JVM running for 660.787)
+10-Oct-2022 13:41:31 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 20432 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 13:41:31 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 13:41:31 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 13:41:31 INFO - Started JsmApplication in 0.548 seconds (JVM running for 665.862)
+10-Oct-2022 13:41:48 ERROR - Sorry!!! Products Not Avaliable!!!ProductId 300
+10-Oct-2022 13:41:59 ERROR - Sorry!!! Products Not Avaliable!!!ProductId 30022
+10-Oct-2022 13:42:10 ERROR - Sorry!!! Products Not Avaliable!!!ProductId 30022
+10-Oct-2022 13:42:44 ERROR - Bill Displayed Successfully!!!
+10-Oct-2022 13:43:13 ERROR - Bill Displayed Successfully!!!
+10-Oct-2022 13:43:44 ERROR - Wrong Credentials Entered!!!shop@jsm.com
+10-Oct-2022 13:43:50 INFO - Customer Loggedin Successfully!!! With Email: cust302@jsm.com
+10-Oct-2022 13:44:00 ERROR - All Bills Displayed Successfully!!!
+10-Oct-2022 13:44:24 INFO - Shop Loggedin Successfully!!! 
+10-Oct-2022 13:44:33 INFO - Shop Loggedin Successfully!!! 
+10-Oct-2022 13:48:31 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 20432 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 13:48:31 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 13:48:31 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 13:49:06 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 20432 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 13:49:06 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 13:49:06 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 13:54:28 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 20432 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 13:54:28 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 13:54:28 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 13:55:43 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 20432 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 13:55:43 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 13:55:43 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 13:55:51 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 23616 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 13:55:51 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 13:55:51 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 13:57:03 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 18776 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 13:57:03 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 13:57:03 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 14:03:47 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 33204 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 14:03:47 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 14:03:47 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 14:03:50 INFO - Started JsmApplication in 3.369 seconds (JVM running for 4.197)
+10-Oct-2022 14:11:34 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 33204 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 14:11:34 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 14:11:34 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 14:11:35 INFO - Started JsmApplication in 0.783 seconds (JVM running for 468.93)
+10-Oct-2022 14:11:45 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 33204 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 14:11:45 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 14:11:45 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 14:11:46 INFO - Started JsmApplication in 0.639 seconds (JVM running for 480.133)
+10-Oct-2022 14:12:03 INFO - Customer Loggedin Successfully!!! With Email: cust302@jsm.com
+10-Oct-2022 15:23:53 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 32924 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 15:23:53 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 15:23:53 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 15:24:00 INFO - Started JsmApplication in 7.057 seconds (JVM running for 8.81)
+10-Oct-2022 15:25:25 INFO - Customer Loggedin Successfully!!! With Email: cust302@jsm.com
+10-Oct-2022 17:24:56 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 32924 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 17:24:56 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 17:24:56 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 17:24:57 INFO - Started JsmApplication in 1.051 seconds (JVM running for 7271.868)
+10-Oct-2022 17:25:30 INFO - Shop Loggedin Successfully!!! 
+10-Oct-2022 17:27:13 ERROR - Wrong Credentials Entered!!!shop@jsm.com
+10-Oct-2022 17:27:24 INFO - Customer Loggedin Successfully!!! With Email: cust302@jsm.com
+10-Oct-2022 17:27:33 ERROR - All Bills Displayed Successfully!!!
+10-Oct-2022 17:28:48 ERROR - Wrong Credentials Entered!!!cust302@jsm.com
+10-Oct-2022 17:28:54 INFO - Shop Loggedin Successfully!!! 
+10-Oct-2022 17:29:06 INFO - Product Updated Successfully!!!
+10-Oct-2022 17:29:38 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 32924 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 17:29:38 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 17:29:38 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 17:29:39 INFO - Started JsmApplication in 0.7 seconds (JVM running for 7553.945)
+10-Oct-2022 17:30:58 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 32924 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 17:30:58 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 17:30:58 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 17:30:58 INFO - Started JsmApplication in 0.673 seconds (JVM running for 7633.321)
+10-Oct-2022 19:12:14 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 32924 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 19:12:14 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 19:12:14 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 19:13:03 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 32924 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 19:13:03 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 19:13:03 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 19:13:39 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 32924 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 19:13:39 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 19:13:39 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 19:14:16 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 32924 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 19:14:16 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 19:14:16 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 19:14:17 INFO - Started JsmApplication in 0.731 seconds (JVM running for 13837.363)
+10-Oct-2022 19:14:26 INFO - Shop Loggedin Successfully!!! 
+10-Oct-2022 19:15:16 ERROR - All Bills Displayed Successfully!!!
+10-Oct-2022 19:16:05 ERROR - No Bill Available!!!
+10-Oct-2022 19:17:53 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 32924 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 19:17:53 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 19:17:53 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 19:17:54 INFO - Started JsmApplication in 0.721 seconds (JVM running for 14054.165)
+10-Oct-2022 19:18:42 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 32924 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 19:18:42 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 19:18:42 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 19:18:43 INFO - Started JsmApplication in 1.026 seconds (JVM running for 14103.544)
+10-Oct-2022 19:18:49 INFO - Wrong JWT Format!!!
+10-Oct-2022 19:19:22 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 32924 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 19:19:22 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 19:19:22 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 19:19:23 INFO - Started JsmApplication in 0.707 seconds (JVM running for 14143.378)
+10-Oct-2022 19:22:35 ERROR - Wrong JWT Format!!!
+10-Oct-2022 19:23:12 ERROR - Wrong JWT Format!!!
+10-Oct-2022 19:23:56 ERROR - Wrong JWT Format!!!
+10-Oct-2022 19:24:41 ERROR - Wrong JWT Format!!!
+10-Oct-2022 19:25:28 INFO - Shop Loggedin Successfully!!! 
+10-Oct-2022 19:25:54 ERROR - All Bills Displayed Successfully!!!
+10-Oct-2022 19:32:45 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 32924 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 19:32:45 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 19:32:45 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 19:32:46 INFO - Started JsmApplication in 0.794 seconds (JVM running for 14946.492)
+10-Oct-2022 19:32:47 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 32924 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 19:32:47 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 19:32:47 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 19:32:49 INFO - Started JsmApplication in 1.45 seconds (JVM running for 14949.439)
+10-Oct-2022 19:33:36 INFO - Product Displayed Successfully!!!
+10-Oct-2022 19:36:53 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 32924 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 19:36:53 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 19:36:53 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 19:36:54 INFO - Started JsmApplication in 0.682 seconds (JVM running for 15194.422)
+10-Oct-2022 19:38:13 INFO - Customer Registered Successfully!!! With Email:
+10-Oct-2022 19:39:35 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 32924 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 19:39:35 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 19:39:35 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 19:39:36 INFO - Started JsmApplication in 0.656 seconds (JVM running for 15356.33)
+10-Oct-2022 19:40:54 INFO - Starting JsmApplication using Java 17.0.4 on LAPTOP-6T6R3QV9 with PID 9268 (D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM\target\classes started by Patil in D:\Sumit\Virtusa\Jewellery-Shop-Management-Rest\JSM)
+10-Oct-2022 19:40:54 DEBUG - Running with Spring Boot v2.7.4, Spring v5.3.23
+10-Oct-2022 19:40:54 INFO - No active profile set, falling back to 1 default profile: "default"
+10-Oct-2022 19:41:01 INFO - Started JsmApplication in 7.286 seconds (JVM running for 9.056)
+10-Oct-2022 19:41:05 INFO - Customer Registered Successfully!!! With Email:cus303@jsm.com
+11-Oct-2022 00:29:34 INFO - Customer Loggedin Successfully!!! With Email: cust302@jsm.com
+11-Oct-2022 00:29:44 ERROR - All Bills Displayed Successfully!!!

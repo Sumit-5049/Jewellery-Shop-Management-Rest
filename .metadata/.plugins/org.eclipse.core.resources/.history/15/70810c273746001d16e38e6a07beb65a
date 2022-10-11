@@ -1,0 +1,44 @@
+package com.virtusa.jsm.service;
+
+
+import java.util.Iterator;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Service;
+
+import com.virtusa.jsm.dao.CartRepository;
+import com.virtusa.jsm.dao.QorderRepository;
+import com.virtusa.jsm.dto.Cart;
+import com.virtusa.jsm.dto.QOrder;
+import com.virtusa.jsm.exception.StockUnavailableException;
+
+
+@Service
+public class OrderService {
+
+	@Autowired
+	QorderRepository odao;
+	@Autowired
+	Environment env;
+	
+	public String purches(QOrder o) throws StockUnavailableException {
+		List c=o.getCarts();
+		for (Iterator iterator = c.iterator(); iterator.hasNext();) {
+			Cart a = (Cart) iterator.next();
+			int qnt=a.getPurchesquantity();
+			int aqut=a.getP().getQuantity();
+			if(aqut-qnt<0)
+				throw new StockUnavailableException(env.getProperty("lessStock")+aqut);
+			a.getP().setQuantity(aqut-qnt);
+			Double t=a.getP().getPrice()*qnt;
+			a.setPrice(t);
+		}
+		return null;
+	}
+	
+	
+	
+	
+}

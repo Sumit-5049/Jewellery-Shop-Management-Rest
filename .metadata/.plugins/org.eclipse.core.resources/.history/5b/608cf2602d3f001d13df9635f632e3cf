@@ -1,0 +1,24 @@
+package com.virtusa.jsm.dto;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+@Entity
+public class Address {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	int id;
+	int buildno;
+	String streetName;
+	String city;
+	String pin;
+	
+	@OneToOne
+	Customer customer;
+	
+//	@OneToOne
+	
+}

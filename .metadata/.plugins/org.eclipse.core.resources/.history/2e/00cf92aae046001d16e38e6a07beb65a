@@ -1,0 +1,63 @@
+package com.virtusa.jsm.controller;
+
+import java.util.List;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.virtusa.jsm.dto.Product;
+import com.virtusa.jsm.dto.UserInfo;
+import com.virtusa.jsm.exception.DataNotFoundException;
+import com.virtusa.jsm.exception.InvalidCredentialException;
+import com.virtusa.jsm.service.ProductService;
+
+@RestController
+@RequestMapping("/product")
+public class ProductController {
+	
+	@Autowired
+	ProductService service;
+	 @Autowired
+	 Environment env;
+	     
+	 Log log= LogFactory.getLog(ProductController.class);
+	@GetMapping("/all")
+	public ResponseEntity<List<Product>> getAllProducts() throws DataNotFoundException {
+		log.info("in the alll");
+		return new ResponseEntity<>(service.getAll(),HttpStatus.OK);
+		
+	}
+	
+	@GetMapping("/allbymaterail/{p1}")
+	public ResponseEntity<?> getAllProductsM(@PathVariable("p1") String material) throws DataNotFoundException {
+		return new ResponseEntity<>(service.getAllByMaterial(material),HttpStatus.OK);
+	}
+	
+	@GetMapping("/allbytype/{p1}")
+	public ResponseEntity<?> getAllProductsT(@PathVariable("p1") String type) throws DataNotFoundException {
+		return new ResponseEntity<>(service.getAllByType(type),HttpStatus.OK);
+	}
+	
+	@PostMapping("/add")
+	public ResponseEntity<String> register(@RequestBody Product p) {
+		return new ResponseEntity<>(service.add(p),HttpStatus.OK);
+	}
+	
+	@PutMapping("/modify")
+	public ResponseEntity<String> updateProduct(@RequestBody Product p) throws DataNotFoundException {
+		return new ResponseEntity<>(service.updateProduct(p),HttpStatus.OK);
+	}
+	
+	
+}

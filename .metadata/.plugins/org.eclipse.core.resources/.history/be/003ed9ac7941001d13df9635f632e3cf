@@ -1,0 +1,17 @@
+package com.virtusa.jsm.dao;
+
+import javax.management.Query;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.virtusa.jsm.dto.Customer;
+
+@Repository
+public interface CustomerDAO extends JpaRepository<Customer, Integer>{
+	
+	
+	@Query("Select c from Customer c where c.email=:p")
+	Customer getCustomer(String email);
+
+}

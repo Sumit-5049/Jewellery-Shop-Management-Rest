@@ -1,0 +1,41 @@
+package com.virtusa.jsm.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Service;
+
+import com.virtusa.jsm.dao.CustomerRepository;
+import com.virtusa.jsm.dto.Customer;
+import com.virtusa.jsm.exception.InvalidCredentialException;
+
+@Service
+public class CustomerService {
+	
+	@Autowired
+	CustomerRepository dao;
+	@Autowired
+	UserInfoService uservice;
+	@Autowired
+	Environment env;
+	
+	public String login(String email, String pass) throws InvalidCredentialException {
+		Customer c=dao.findByEmail(email);
+		if(uservice.login(c,pass))
+			return env.getProperty("logincus")+email;
+		else
+			throw new InvalidCredentialException(env.getProperty("invalid"));
+		}
+
+	public void save(Customer c) {
+		dao.save(c);
+		
+	}
+
+	public List<?> findAll() {
+		return dao.findAll();		
+	}
+
+	
+}

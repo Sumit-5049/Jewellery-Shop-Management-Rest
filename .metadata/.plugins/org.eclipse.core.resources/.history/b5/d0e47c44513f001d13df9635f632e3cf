@@ -1,0 +1,91 @@
+package com.virtusa.jsm.dto;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+@Entity
+public class Address {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	int id;
+	int buildno;
+	String streetName;
+	String city;
+	String pin;
+	
+	@OneToOne(mappedBy = "address")
+	Customer customer;
+
+	public Address() {
+		super();
+	}
+
+	public Address(int buildno, String streetName, String city, String pin, Customer customer) {
+		super();
+//		this.id = id;
+		this.buildno = buildno;
+		this.streetName = streetName;
+		this.city = city;
+		this.pin = pin;
+		this.customer = customer;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getBuildno() {
+		return buildno;
+	}
+
+	public void setBuildno(int buildno) {
+		this.buildno = buildno;
+	}
+
+	public String getStreetName() {
+		return streetName;
+	}
+
+	public void setStreetName(String streetName) {
+		this.streetName = streetName;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getPin() {
+		return pin;
+	}
+
+	public void setPin(String pin) {
+		this.pin = pin;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
+	@Override
+	public String toString() {
+		return "Address [id=" + id + ", buildno=" + buildno + ", streetName=" + streetName + ", city=" + city + ", pin="
+				+ pin + ", customer=" + customer + "]";
+	}
+	
+	
+}

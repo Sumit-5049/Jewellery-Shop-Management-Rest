@@ -1,0 +1,19 @@
+package com.virtusa.jsm.service;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.virtusa.jsm.dao.CartRepository;
+import com.virtusa.jsm.dao.QorderRepository;
+
+@Service
+public class OrderService {
+
+	@Autowired
+	QorderRepository odao;
+	
+	
+	
+	
+}

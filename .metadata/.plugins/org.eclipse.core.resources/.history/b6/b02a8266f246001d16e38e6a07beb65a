@@ -1,0 +1,67 @@
+package com.virtusa.jsm.service;
+
+
+import java.util.Iterator;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Service;
+
+import com.virtusa.jsm.dao.CartRepository;
+import com.virtusa.jsm.dao.QorderRepository;
+import com.virtusa.jsm.dto.Cart;
+import com.virtusa.jsm.dto.Product;
+import com.virtusa.jsm.dto.QOrder;
+import com.virtusa.jsm.exception.DataNotFoundException;
+import com.virtusa.jsm.exception.StockUnavailableException;
+
+
+@Service
+public class OrderService {
+
+	@Autowired
+	QorderRepository odao;
+	@Autowired
+	Environment env;
+	@Autowired
+	ProductService pservice;
+	@Autowired
+	BillService bservice;
+	
+	public String purches(QOrder o) throws StockUnavailableException, DataNotFoundException {
+		List<Cart> c=o.getCarts();
+		Double total=0.0;
+		for (Iterator<Cart> iterator = c.iterator(); iterator.hasNext();) {
+			Cart a = (Cart) iterator.next();
+			int qnt=a.getPurchesquantity();
+			
+			int pid=a.getP().getProductid();
+			Product p=pservice.getById(pid);
+			int aqut=p.getQuantity();
+			if(aqut-qnt<0)
+				throw new StockUnavailableException(env.getProperty("lessStock")+aqut);
+			p.setQuantity(aqut-qnt);
+			a.setP(p);
+			
+			Double t=a.getP().getPrice()*qnt;
+			total+=t;
+			a.setPrice(t);
+		}
+		Double tax=Double.parseDouble(env.getProperty("tax"))*total/100;
+		o.setTax(tax);
+		o.setTotal(total+tax);
+		odao.save(o);
+		bservice.generate(odao.findById(o.getOrderid()).get(),2001);
+		return env.getProperty("purched");
+		
+	}
+
+	public Object getAll() {
+		return odao.findAll();
+	}
+	
+	
+	
+	
+}

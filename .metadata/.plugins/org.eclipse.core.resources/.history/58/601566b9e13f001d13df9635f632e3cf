@@ -1,0 +1,89 @@
+package com.virtusa.jsm.dto;
+
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "bill_table")
+public class Bill {
+
+	@Id
+	int billid;
+	Timestamp dateTime;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	Customer cus;
+	
+	@OneToMany
+	List<Order> oredrs=new ArrayList<>();
+	
+	@Column(name="nettax")
+	Double tax;
+	@Column(name="net")
+	Double total;
+	public Bill(int billid, Timestamp dateTime, Customer cus, List<Order> oredrs, Double tax, Double total) {
+		super();
+		this.billid = billid;
+		this.dateTime = dateTime;
+		this.cus = cus;
+		this.oredrs = oredrs;
+		this.tax = tax;
+		this.total = total;
+	}
+	public Bill() {
+		super();
+	}
+	public int getBillid() {
+		return billid;
+	}
+	public void setBillid(int billid) {
+		this.billid = billid;
+	}
+	public Timestamp getDateTime() {
+		return dateTime;
+	}
+	public void setDateTime(Timestamp dateTime) {
+		this.dateTime = dateTime;
+	}
+	public Customer getCus() {
+		return cus;
+	}
+	public void setCus(Customer cus) {
+		this.cus = cus;
+	}
+	public List<Order> getOredrs() {
+		return oredrs;
+	}
+	public void setOredrs(List<Order> oredrs) {
+		this.oredrs = oredrs;
+	}
+	public Double getTax() {
+		return tax;
+	}
+	public void setTax(Double tax) {
+		this.tax = tax;
+	}
+	public Double getTotal() {
+		return total;
+	}
+	public void setTotal(Double total) {
+		this.total = total;
+	}
+	@Override
+	public String toString() {
+		return "Bill [billid=" + billid + ", dateTime=" + dateTime + ", cus=" + cus + ", oredrs=" + oredrs + ", tax="
+				+ tax + ", total=" + total + "]";
+	}
+	
+	
+}

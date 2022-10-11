@@ -1,0 +1,53 @@
+package com.virtusa.jsm.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Service;
+
+import com.virtusa.jsm.dao.ProductRepository;
+import com.virtusa.jsm.dto.Product;
+import com.virtusa.jsm.exception.DataNotFoundException;
+
+@Service
+public class ProductService {
+
+	@Autowired
+	ProductRepository dao;
+	@Autowired
+	Environment env;
+
+	public Object getAll() throws DataNotFoundException {
+		List<Product> list=null;
+		list= dao.findAll();
+		if(!list.isEmpty())
+			return list;
+		else
+			throw new DataNotFoundException(env.getProperty("emptyproduct"));
+	}
+
+	public Object add(Product p) {
+		dao.save(p);
+		return env.getProperty("padded");
+	}
+
+	public Object getAllByMaterial(String material) throws DataNotFoundException {
+		List<Product> list=null;
+		list= dao.findAllByMaterial(material);
+		if(!list.isEmpty())
+			return list;
+		else
+			throw new DataNotFoundException(env.getProperty("emptyproductmat")+material);
+	}
+
+	public Object getAllByType(String type) throws DataNotFoundException {
+		List<Product> list=null;
+		list= dao.findAllByType(type);
+		if(!list.isEmpty())
+			return list;
+		else
+			throw new DataNotFoundException(env.getProperty("emptyproductmat")+type);
+	}
+		
+}

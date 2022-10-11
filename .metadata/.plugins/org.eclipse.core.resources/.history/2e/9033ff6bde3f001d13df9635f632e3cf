@@ -1,0 +1,36 @@
+package com.virtusa.jsm.dto;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "product_table")
+public class Product {
+
+	@Id
+	int id;
+	String pname;
+	String description;
+	double weight;
+	double purity;
+	String material;
+	String type;
+	int quantity;	
+	
+	
+//	pu*rateper10gm*wt/1000	formula for net cost of one product
+	
+			
+//	@Column(name = "costper10gm")
+	double rateper10gm;
+//	@Column(name = "subtotal")
+	double price;
+	
+	public Product() {
+		super();
+	}
+
+	
+}

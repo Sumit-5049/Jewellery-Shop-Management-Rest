@@ -1,0 +1,23 @@
+package com.virtusa.jsm.dto;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "product_table")
+public class Product {
+
+	@Id
+	int id;
+	String pname;
+	String description;
+	double weight;
+	double purity;
+	String material;
+	String type;
+	int quantity;	
+	@Column(name = "subtotal")
+	Double price;
+}

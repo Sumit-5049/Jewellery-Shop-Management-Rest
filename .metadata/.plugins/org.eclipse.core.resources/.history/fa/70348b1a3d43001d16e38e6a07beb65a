@@ -1,0 +1,19 @@
+package com.virtusa.jsm.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.virtusa.jsm.dao.ShopDAO;
+
+@Service
+public class ShopService {
+	
+	@Autowired
+	ShopDAO dao;
+	
+	public List<?> findAll() {
+		return dao.findAll();		
+	}
+}
