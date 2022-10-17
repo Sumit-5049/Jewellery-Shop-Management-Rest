@@ -1,6 +1,5 @@
 package com.virtusa.jsm.service;
 
-
 import java.util.Iterator;
 import java.util.List;
 
@@ -10,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
-import com.virtusa.jsm.dao.CartRepository;
 import com.virtusa.jsm.dao.QorderRepository;
 import com.virtusa.jsm.dto.Bill;
 import com.virtusa.jsm.dto.Cart;
@@ -18,7 +16,6 @@ import com.virtusa.jsm.dto.Product;
 import com.virtusa.jsm.dto.QOrder;
 import com.virtusa.jsm.exception.DataNotFoundException;
 import com.virtusa.jsm.exception.StockUnavailableException;
-
 
 @Service
 public class OrderService {
@@ -50,7 +47,7 @@ public class OrderService {
 			}
 			p.setQuantity(aqut-qnt);
 			a.setP(p);
-			
+			a.setRateper10gm(p.getRateper10gm());
 			Double t=a.getP().getPrice()*qnt;
 			total+=t;
 			a.setPrice(t);
@@ -58,7 +55,7 @@ public class OrderService {
 		Double tax=Double.parseDouble(env.getProperty("tax"))*total/100;
 		o.setTax(tax);
 		o.setTotal(total+tax);
-		
+	
 		odao.save(o);
 		
 		Bill b=bservice.generate(odao.findById(o.getOrderid()).get(),cservice.getId(email));

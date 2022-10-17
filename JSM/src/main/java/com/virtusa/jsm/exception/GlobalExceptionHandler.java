@@ -35,6 +35,11 @@ public class GlobalExceptionHandler {
 	    public @ResponseBody  ResponseEntity<?> WrongFormatException(WrongFormatException e, HttpServletRequest req) {
 	          return new ResponseEntity<>(new ErrorInfo(LocalDateTime.now(), e.getMessage(), req.getRequestURI()),HttpStatus.NOT_FOUND);
 	    }
+	  
+	  @ExceptionHandler(DuplicateException.class)
+	    public @ResponseBody  ResponseEntity<?> DuplicateException(DuplicateException e, HttpServletRequest req) {
+	          return new ResponseEntity<>(new ErrorInfo(LocalDateTime.now(), e.getMessage(), req.getRequestURI()),HttpStatus.NOT_ACCEPTABLE);
+	    }
 	
 	  
 //	  @ExceptionHandler(DataNotFoundException.class)

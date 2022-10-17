@@ -25,22 +25,19 @@ public class Cart {
 	Product p;
 	int purchesquantity;	
 	double price; 	//priceperone*quantity
+	double rateper10gm;
 	
-	public Cart(int cartid, Product p, int purchesquantity, double price) {
+	
+	public Cart(int cartid, Product p, int purchesquantity, double price, double rateper10gm) {
 		super();
 		this.cartid = cartid;
 		this.p = p;
 		this.purchesquantity = purchesquantity;
 		this.price = price;
+		this.rateper10gm = rateper10gm;
 	}
 	public Cart() {
 		super();
-	}
-	public int getcartid() {
-		return cartid;
-	}
-	public void setcartid(int cartid) {
-		this.cartid = cartid;
 	}
 	public Product getP() {
 		return p;
@@ -60,11 +57,24 @@ public class Cart {
 	public void setPrice(double price) {
 		this.price = price;
 	}
+	public int getCartid() {
+		return cartid;
+	}
+	public void setCartid(int cartid) {
+		this.cartid = cartid;
+	}
+	public double getRateper10gm() {
+		return rateper10gm;
+	}
+	public void setRateper10gm(double rateper10gm) {
+		this.rateper10gm = rateper10gm;
+	}
 	@Override
 	public String toString() {
-		return "Order [cartid=" + cartid + ", p=" + p + ", purchesquantity=" + purchesquantity + ", price=" + price
-				+ "]";
+		return "Cart [cartid=" + cartid + ", p=" + p + ", purchesquantity=" + purchesquantity + ", price=" + price
+				+ ", rateper10gm=" + rateper10gm + "]";
 	}
+	
 	
 	
 }

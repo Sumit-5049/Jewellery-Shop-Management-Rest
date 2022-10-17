@@ -29,6 +29,7 @@ import com.virtusa.jsm.util.JwtUtil;
 @RestController
 @RequestMapping("/bill")
 public class BillController {
+	
 	@Autowired
 	BillService service;
 	@Autowired
@@ -101,8 +102,6 @@ public class BillController {
 	
 	@GetMapping("/Customer/{p}")
 	public ResponseEntity<?> getAllProductCS(@RequestHeader(name = "Authorization" ) String tokenDup,@PathVariable("p") String email) throws DataNotFoundException, WrongFormatException {
-		
-		
 		String token = tokenDup.substring(7);
 		if(jwtTokenUtil.isTokenInFormat(token)){
 			
@@ -118,22 +117,22 @@ public class BillController {
 		}}
 		throw new WrongFormatException(env.getProperty("wrongJWT"));
 	}
-	}
 	
-//	@GetMapping("/Customer/{p}")
-//	public ResponseEntity<?> getByIdC(@RequestHeader(name = "Authorization" ) String tokenDup,@PathVariable("p") int id) throws DataNotFoundException, WrongFormatException {
-//		String token = tokenDup.substring(7);
-//		if(jwtTokenUtil.isTokenInFormat(token)){
-//			UserDetails user ;
-//			 user = cservice.getByEmail(jwtTokenUtil.extractUsername(token));
-//			if(user!=null) {
-//				if (jwtTokenUtil.validateToken(token, user)) {
-//					return new ResponseEntity<>(service.getByIdC(id,user.getUsername()),HttpStatus.OK);
-//				} else {
-//					vaildatingDTO.setValidStatus(false);
-//					return new ResponseEntity<>(vaildatingDTO, HttpStatus.FORBIDDEN);
-//				}
-//			}  
-//		}
-//		throw new WrongFormatException(env.getProperty("wrongJWT"));
-//	}
+	@GetMapping("/customer/{p}")
+	public ResponseEntity<?> getByIdC(@RequestHeader(name = "Authorization" ) String tokenDup,@PathVariable("p") int id) throws DataNotFoundException, WrongFormatException {
+		String token = tokenDup.substring(7);
+		if(jwtTokenUtil.isTokenInFormat(token)){
+			UserDetails user ;
+			 user = cservice.getByEmail(jwtTokenUtil.extractUsername(token));
+			if(user!=null) {
+				if (jwtTokenUtil.validateToken(token, user)) {
+					return new ResponseEntity<>(service.getByIdC(id,user.getUsername()),HttpStatus.OK);
+				} else {
+					vaildatingDTO.setValidStatus(false);
+					return new ResponseEntity<>(vaildatingDTO, HttpStatus.FORBIDDEN);
+				}
+			}  
+		}
+		throw new WrongFormatException(env.getProperty("wrongJWT"));
+	}
+}

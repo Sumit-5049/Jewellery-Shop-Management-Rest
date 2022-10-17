@@ -16,7 +16,9 @@ import com.virtusa.jsm.dao.CustomerRepository;
 import com.virtusa.jsm.dto.AuthenticationRequest;
 import com.virtusa.jsm.dto.Customer;
 import com.virtusa.jsm.dto.Shop;
+import com.virtusa.jsm.dto.UserInfo;
 import com.virtusa.jsm.exception.DataNotFoundException;
+import com.virtusa.jsm.exception.DuplicateException;
 import com.virtusa.jsm.exception.InvalidCredentialException;
 
 @Service
@@ -63,12 +65,6 @@ public class CustomerService {
 		log.error(env.getProperty("invalid")+extractUsername);
 		throw new DataNotFoundException(env.getProperty("invalid")+extractUsername);
 	}
-		
-		
-		
-		
-	
-
 
 	public int getId(String email) {
 		return dao.findByEmail(email).getCustomerid();
@@ -77,6 +73,16 @@ public class CustomerService {
 
 	public Customer getCByEmail(String email) {
 		return dao.findByEmail(email);
+	}
+
+
+	public Object register(UserInfo u) throws DuplicateException {
+		if(!dao.existsByEmail(u.getC().getEmail())) {
+			return uservice.register(u);
+		}
+		log.error(env.getProperty("duplicate")+u.getC().getEmail());
+		throw new DuplicateException(env.getProperty("duplicate")+u.getC().getEmail());
+			
 	}
 
 

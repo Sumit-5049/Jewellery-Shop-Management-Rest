@@ -1,5 +1,6 @@
 package com.virtusa.jsm.service;
 
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
@@ -25,23 +26,23 @@ public class ProductService {
 	Environment env;
 	Log log= LogFactory.getLog(ProductService.class);
 	
-	public List<Product> getAll() throws DataNotFoundException {
+	public List<Product> getAll(List<Double> l) throws DataNotFoundException {
 		List<Product> list=null;
 		list= dao.findAll();
 		if(!list.isEmpty())
 		{
 			for (Iterator iterator = list.iterator(); iterator.hasNext();) {
 				Product p = (Product) iterator.next();
-				if(p.getPrice()==0.0)
+//				if(p.getPrice()==0.0)
 				{
 					double r=0.0;
 					 double x=p.getPurity();
 					 String m=p.getMaterial();
 					 if(m.equals("Gold"))
-						 r=Double.parseDouble(env.getProperty("Gold"));
+						 r=l.get(0);
 					 else if(m.equals("Silver"))
-						 r=Double.parseDouble(env.getProperty("Silver"));
-					 p.setPrice(r*x*p.getWeight()/100);
+						 r=l.get(1);
+					 p.setPrice(Double.parseDouble(String.format("%.2f",(r*x*p.getWeight()/100))));
 					 p.setRateper10gm(r);
 					 dao.save(p);
 				}
@@ -100,7 +101,35 @@ public class ProductService {
 			throw new DataNotFoundException(env.getProperty("emptyproduct")+pid);}
 		 
 	}
+	
+	public List<Product> getAllByMaterialSort(String material, String sort) throws DataNotFoundException {
+		List<Product> list=this.getAllByMaterial(material);
+		if(sort.equals("asc"))
+			list.sort((o1, o2) -> Double.compare(o2.getPrice(), o1.getPrice()));
+		else if(sort.equals("desc"))
+			list.sort(Comparator.comparingDouble(Product::getPrice));
+		return list;
+	}
 
+	public List<Product> getAllSort(List<Double> l, String sort) throws DataNotFoundException {
+		List<Product> list=this.getAll(l);
+		if(sort.equals("asc"))
+			list.sort(Comparator.comparingDouble(Product::getPrice).reversed());
+		else if(sort.equals("desc"))
+			list.sort(Comparator.comparingDouble(Product::getPrice));
+		return list;
+	}
+
+	public Object getAllByTypeSort(String type, String sort) throws DataNotFoundException {
+		List<Product> list=this.getAllByType(type);
+		if(sort.equals("asc"))
+			list.sort((o1, o2) -> Double.compare(o2.getPrice(), o1.getPrice()));
+		else if(sort.equals("desc"))
+			list.sort(Comparator.comparingDouble(Product::getPrice));
+		return list;
+	}
+
+	
 	
 	
 	

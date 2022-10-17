@@ -16,7 +16,6 @@ public class Shop {
 	
 	@Id
 	int shopid;
-	String userName;
 	String email;
 	String contact;
 	int buildno;
@@ -51,11 +50,12 @@ public class Shop {
 		super();
 	}
 
-	public Shop(int shopid, String userName, String email, String contact, int buildno, String streetName, String city,
-		String pin, String password) {
+	
+
+	public Shop(int shopid, String email, String contact, int buildno, String streetName, String city, String pin,
+		String password) {
 	super();
 	this.shopid = shopid;
-	this.userName = userName;
 	this.email = email;
 	this.contact = contact;
 	this.buildno = buildno;
@@ -64,22 +64,6 @@ public class Shop {
 	this.pin = pin;
 	this.password = password;
 }
-
-	public int getshopid() {
-		return shopid;
-	}
-
-	public void setshopid(int shopid) {
-		this.shopid = shopid;
-	}
-
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
 
 	public String getEmail() {
 		return email;
@@ -137,12 +121,21 @@ public class Shop {
 		this.password = password;
 	}
 
+	public int getShopid() {
+		return shopid;
+	}
+
+	public void setShopid(int shopid) {
+		this.shopid = shopid;
+	}
+
 	@Override
 	public String toString() {
-		return "Shop [shopid=" + shopid + ", userName=" + userName + ", email=" + email + ", contact=" + contact + ", buildno="
-				+ buildno + ", streetName=" + streetName + ", city=" + city + ", pin=" + pin + ", password=" + password
-				+ "]";
+		return "Shop [shopid=" + shopid + ", email=" + email + ", contact=" + contact + ", buildno=" + buildno
+				+ ", streetName=" + streetName + ", city=" + city + ", pin=" + pin + ", password=" + password + "]";
 	}
+
+	
 
 //	public List<Product> getProducts() {
 //		return products;
@@ -169,5 +162,6 @@ public class Shop {
 //	
 	
 	
+
 	
 }

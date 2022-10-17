@@ -21,14 +21,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.virtusa.jsm.dao.BillRepository;
 import com.virtusa.jsm.dao.CustomerRepository;
 import com.virtusa.jsm.dao.QorderRepository;
-import com.virtusa.jsm.dao.ProductRepository;
 import com.virtusa.jsm.dao.ShopRepository;
 import com.virtusa.jsm.dto.AuthenticationRequest;
 import com.virtusa.jsm.dto.AuthenticationResponse;
-import com.virtusa.jsm.dto.Customer;
 import com.virtusa.jsm.dto.UserInfo;
 import com.virtusa.jsm.dto.VaildatingDTO;
 import com.virtusa.jsm.exception.DataNotFoundException;
+import com.virtusa.jsm.exception.DuplicateException;
 import com.virtusa.jsm.exception.InvalidCredentialException;
 import com.virtusa.jsm.exception.WrongFormatException;
 import com.virtusa.jsm.service.CustomerService;
@@ -62,8 +61,8 @@ public class CustomerController {
 	}
 	
 	@PostMapping("/register")
-	public ResponseEntity<?> register(@RequestBody UserInfo u) {
-		return new ResponseEntity<>(uservice.register(u),HttpStatus.OK);
+	public ResponseEntity<?> register(@RequestBody UserInfo u) throws DuplicateException {
+		return new ResponseEntity<>(cservice.register(u),HttpStatus.OK);
 	}
 	
 	@GetMapping("/logout")

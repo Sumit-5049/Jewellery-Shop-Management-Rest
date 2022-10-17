@@ -27,6 +27,7 @@ import com.virtusa.jsm.dto.VaildatingDTO;
 import com.virtusa.jsm.exception.DataNotFoundException;
 import com.virtusa.jsm.exception.InvalidCredentialException;
 import com.virtusa.jsm.exception.WrongFormatException;
+import com.virtusa.jsm.service.CustomerService;
 import com.virtusa.jsm.service.ShopService;
 import com.virtusa.jsm.util.JwtUtil;
 
@@ -35,6 +36,8 @@ import com.virtusa.jsm.util.JwtUtil;
 public class ShopController {
 	@Autowired
 	ShopService service;
+	@Autowired
+	CustomerService cservice;
     @Autowired
 	JwtUtil jwtTokenUtil;
     @Autowired
@@ -90,5 +93,10 @@ public class ShopController {
 			}  
 		}
 		throw new WrongFormatException(env.getProperty("wrongJWT"));
+	}
+	
+	@GetMapping("/allCustomers")
+	public List<?> getallCust(){
+		return cservice.findAll();
 	}
 }

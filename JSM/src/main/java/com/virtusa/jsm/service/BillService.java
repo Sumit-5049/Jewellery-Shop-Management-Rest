@@ -85,16 +85,19 @@ public class BillService {
 			throw new DataNotFoundException(env.getProperty("noBill"));}
 	}
 
-//	public Object getByIdC(int id, String email) throws DataNotFoundException {
-//		Optional<?> b;
-//		Customer c=cservice.getCByEmail(email);
-//		b=dao.findByIdC(id,c);
-//		if(!b.isEmpty()) {
-//			 log.error(env.getProperty("displayBill1"));
-//			return dao.findByIdC(id,c).get();}
-//		else {
-//			 log.error(env.getProperty("noBill"));
-//			throw new DataNotFoundException(env.getProperty("noBill"));}
-//	}
+	public Object getByIdC(int id, String email) throws DataNotFoundException {
+		Bill b;
+		Customer c=cservice.getCByEmail(email);
+		if(dao.existsById(id)) {
+			b=dao.findById(id).get();
+			if(b.getCust().equals(c)) {
+				 log.error(env.getProperty("displayBill1"));
+				return b;}
+				 log.error(env.getProperty("noBill"));
+				throw new DataNotFoundException(env.getProperty("noBill"));
+			}
+			log.error(env.getProperty("noBill"));
+			throw new DataNotFoundException(env.getProperty("noBill"));
+			}
 	
 }

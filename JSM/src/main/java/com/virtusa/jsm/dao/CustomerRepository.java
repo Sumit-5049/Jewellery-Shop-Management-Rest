@@ -11,6 +11,8 @@ import com.virtusa.jsm.dto.Customer;
 public interface CustomerRepository extends JpaRepository<Customer, Integer>{
 
 	Customer findByEmail(String email);
+
+	boolean existsByEmail(String email);
 	
 	
 	

@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import com.virtusa.jsm.dto.Product;
 import com.virtusa.jsm.dto.UserInfo;
@@ -42,20 +43,48 @@ public class ProductController {
 	VaildatingDTO vaildatingDTO;
     @Autowired
 	Environment env;
+    @Autowired
+    RestTemplate templet;
 	     
-	@GetMapping("/all")
-	public ResponseEntity<List<Product>> getAllProducts() throws DataNotFoundException {
-		return new ResponseEntity<>(service.getAll(),HttpStatus.OK);
+    @GetMapping("/rates")
+	public ResponseEntity<?> getPrices() throws DataNotFoundException {
+		String url="http://localhost:9091/gsprice";
+		List<Double> l=templet.getForObject(url, List.class);
+		return new ResponseEntity<>(l,HttpStatus.OK);
 	}
+    
+    @GetMapping("/all")
+	public ResponseEntity<List<Product>> getAllProducts() throws DataNotFoundException {
+		String url="http://localhost:9091/gsprice";
+		List<Double> l=templet.getForObject(url, List.class);
+		return new ResponseEntity<>(service.getAll(l),HttpStatus.OK);
+	}
+    
+    @GetMapping("/all/{p1}")
+   	public ResponseEntity<List<Product>> getAllProductSort(@PathVariable("p1") String sort) throws DataNotFoundException {
+   		String url="http://localhost:9091/gsprice";
+   		List<Double> l=templet.getForObject(url, List.class);
+   		return new ResponseEntity<>(service.getAllSort(l,sort),HttpStatus.OK);
+   	}
 	
 	@GetMapping("/allbymaterail/{p1}")
 	public ResponseEntity<?> getAllProductsM(@PathVariable("p1") String material) throws DataNotFoundException {
 		return new ResponseEntity<>(service.getAllByMaterial(material),HttpStatus.OK);
 	}
 	
+	@GetMapping("/allbymaterail/{p1}/{p2}")
+	public ResponseEntity<?> getAllProductsM(@PathVariable("p1") String material,@PathVariable("p2") String sort) throws DataNotFoundException {
+		return new ResponseEntity<>(service.getAllByMaterialSort(material,sort),HttpStatus.OK);
+	}
+	
 	@GetMapping("/allbytype/{p1}")
 	public ResponseEntity<?> getAllProductsT(@PathVariable("p1") String type) throws DataNotFoundException {
 		return new ResponseEntity<>(service.getAllByType(type),HttpStatus.OK);
+	}
+	
+	@GetMapping("/allbytype/{p1}/{p2}")
+	public ResponseEntity<?> getAllProductsT(@PathVariable("p1") String type,@PathVariable("p2") String sort) throws DataNotFoundException {
+		return new ResponseEntity<>(service.getAllByTypeSort(type,sort),HttpStatus.OK);
 	}
 	
 	@GetMapping("/aproduct/{p}")
